@@ -1,38 +1,225 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  background: #f6f7fb;
+  color: #0f172a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.page {
   min-height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 504px;
+  padding: 16px 14px 18px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.turn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.pill {
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 999px;
+}
+
+.p1 {
+  background: #ef4444;
+}
+
+.p2 {
+  background: #0ea5e9;
+}
+
+.win {
+  font-weight: 800;
+  color: #059669;
+}
+
+.lose {
+  font-weight: 600;
+  color: #111827;
+}
+
+.legend {
+  display: flex;
+  gap: 10px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.cell {
+  min-height: 44px;
+  padding: 3px;
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.cell-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.num {
+  font-size: 7px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.badge {
+  padding: 0 4px;
+  font-size: 5px;
+  border: 1px solid;
+  border-radius: 999px;
+}
+
+.badge.ladder {
+  color: #16a34a;
+  border-color: #86efac;
+}
+
+.badge.snake {
+  color: #ef4444;
+  border-color: #fca5a5;
+}
+
+.tokens {
+  display: flex;
+  gap: 2px;
+}
+
+.token {
+  width: 15px;
+  height: 15px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 6px;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn {
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.btn.roll {
+  color: #fff;
+  background: #2563eb;
+}
+
+.btn.roll:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn.reset {
+  color: #111827;
+  background: #fff;
+  border-color: #e5e7eb;
+}
+
+.rules {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 8px;
+  color: #6b7280;
+}
+
+@media (max-width: 480px) {
+  .cell {
+    min-height: 34px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .badge {
+    display: none;
+  }
+
+  .token {
+    width: 12px;
+    height: 12px;
+    font-size: 5px;
   }
 }
